@@ -21,9 +21,9 @@
                 <div class="w-full max-w-md mx-auto">
                     <div class="text-center mb-8">
                         <a href="/" class="inline-block">
-                            <img src="{{ asset('images/logo.jpeg') }}" alt="JurisTech" class="h-14 w-auto object-contain">
+                            <img src="{{ asset('images/logo.jpeg') }}" alt="JurisTech" class="h-[72px] w-auto object-contain">
                         </a>
-                        <p class="mt-2 text-[15px] text-gray-600">Gestión de Datacrédito con autoridad legal</p>
+                        <p class="mt-2 text-[15px] text-gray-600">Gestión integral de clientes y seguimiento de procesos</p>
                     </div>
 
                     <div class="bg-white px-8 py-8 shadow-sm rounded-xl border border-gray-200">
