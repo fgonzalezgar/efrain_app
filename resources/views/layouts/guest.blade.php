@@ -21,10 +21,7 @@
                 <div class="w-full max-w-md mx-auto">
                     <div class="text-center mb-8">
                         <a href="/" class="inline-block">
-                            <div class="flex items-center justify-center gap-2 text-[28px] font-bold text-[#0f172a]">
-                                <svg class="w-8 h-8 text-[#0f172a]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                                <span>JurisTech</span>
-                            </div>
+                            <img src="{{ asset('images/logo.jpeg') }}" alt="JurisTech" class="h-14 w-auto object-contain">
                         </a>
                         <p class="mt-2 text-[15px] text-gray-600">Gestión de Datacrédito con autoridad legal</p>
                     </div>
