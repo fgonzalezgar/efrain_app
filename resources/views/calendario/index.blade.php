@@ -43,22 +43,22 @@
                     <!-- Cuadrícula del Calendario -->
                     <div class="flex-1 grid grid-cols-7 grid-rows-5 bg-gray-200 gap-px">
                         <!-- Fila 1 (25-1) -->
-                        <div class="bg-white min-h-[120px] p-2 text-gray-400 text-sm font-medium">25</div>
-                        <div class="bg-white min-h-[120px] p-2 text-gray-400 text-sm font-medium">26</div>
-                        <div class="bg-white min-h-[120px] p-2 text-gray-400 text-sm font-medium">27</div>
-                        <div class="bg-white min-h-[120px] p-2 text-gray-400 text-sm font-medium">28</div>
-                        <div class="bg-white min-h-[120px] p-2 text-gray-400 text-sm font-medium">29</div>
-                        <div class="bg-white min-h-[120px] p-2 text-gray-400 text-sm font-medium">30</div>
-                        <div class="bg-white min-h-[120px] p-2 text-gray-900 text-sm font-bold">1</div>
+                        <div class="bg-white min-h-[100px] p-2 text-gray-400 text-sm font-medium">25</div>
+                        <div class="bg-white min-h-[100px] p-2 text-gray-400 text-sm font-medium">26</div>
+                        <div class="bg-white min-h-[100px] p-2 text-gray-400 text-sm font-medium">27</div>
+                        <div class="bg-white min-h-[100px] p-2 text-gray-400 text-sm font-medium">28</div>
+                        <div class="bg-white min-h-[100px] p-2 text-gray-400 text-sm font-medium">29</div>
+                        <div class="bg-white min-h-[100px] p-2 text-gray-400 text-sm font-medium">30</div>
+                        <div class="bg-white min-h-[100px] p-2 text-gray-900 text-sm font-bold">1</div>
                         
                         <!-- Fila 2 (2-8) -->
-                        <div class="bg-white min-h-[120px] p-2 flex flex-col gap-1">
+                        <div class="bg-white min-h-[100px] p-2 flex flex-col gap-1">
                             <span class="text-gray-900 text-sm font-bold mb-1">2</span>
                             <div class="bg-[#1e293b] text-white text-[10px] font-bold px-1.5 py-1 rounded truncate shadow-sm">
                                 Radicación Bancolombia
                             </div>
                         </div>
-                        <div class="bg-blue-50/50 min-h-[120px] p-2 flex flex-col gap-1 border-2 border-blue-400 relative z-10 shadow-sm">
+                        <div class="bg-blue-50/50 min-h-[100px] p-2 flex flex-col gap-1 border-2 border-blue-400 relative z-10 shadow-sm">
                             <span class="text-blue-600 text-sm font-bold mb-1">3</span>
                             <div class="bg-red-100 text-red-700 border border-red-200 text-[10px] font-bold px-1.5 py-1 rounded truncate">
                                 Tutela Falabella
@@ -67,38 +67,38 @@
                                 Vencimiento Cobro
                             </div>
                         </div>
-                        <div class="bg-white min-h-[120px] p-2 text-gray-900 text-sm font-bold">4</div>
-                        <div class="bg-white min-h-[120px] p-2 text-gray-900 text-sm font-bold">5</div>
-                        <div class="bg-white min-h-[120px] p-2 text-gray-900 text-sm font-bold">6</div>
-                        <div class="bg-white min-h-[120px] p-2 text-gray-900 text-sm font-bold">7</div>
-                        <div class="bg-white min-h-[120px] p-2 text-gray-900 text-sm font-bold">8</div>
+                        <div class="bg-white min-h-[100px] p-2 text-gray-900 text-sm font-bold">4</div>
+                        <div class="bg-white min-h-[100px] p-2 text-gray-900 text-sm font-bold">5</div>
+                        <div class="bg-white min-h-[100px] p-2 text-gray-900 text-sm font-bold">6</div>
+                        <div class="bg-white min-h-[100px] p-2 text-gray-900 text-sm font-bold">7</div>
+                        <div class="bg-white min-h-[100px] p-2 text-gray-900 text-sm font-bold">8</div>
                         
                         <!-- Fila 3 (9-15) -->
-                        <div class="bg-white min-h-[120px] p-2 text-gray-900 text-sm font-bold">9</div>
-                        <div class="bg-white min-h-[120px] p-2 text-gray-900 text-sm font-bold">10</div>
-                        <div class="bg-white min-h-[120px] p-2 text-gray-900 text-sm font-bold">11</div>
-                        <div class="bg-white min-h-[120px] p-2 text-gray-900 text-sm font-bold">12</div>
-                        <div class="bg-white min-h-[120px] p-2 text-gray-900 text-sm font-bold">13</div>
-                        <div class="bg-white min-h-[120px] p-2 text-gray-900 text-sm font-bold">14</div>
-                        <div class="bg-white min-h-[120px] p-2 text-gray-900 text-sm font-bold">15</div>
+                        <div class="bg-white min-h-[100px] p-2 text-gray-900 text-sm font-bold">9</div>
+                        <div class="bg-white min-h-[100px] p-2 text-gray-900 text-sm font-bold">10</div>
+                        <div class="bg-white min-h-[100px] p-2 text-gray-900 text-sm font-bold">11</div>
+                        <div class="bg-white min-h-[100px] p-2 text-gray-900 text-sm font-bold">12</div>
+                        <div class="bg-white min-h-[100px] p-2 text-gray-900 text-sm font-bold">13</div>
+                        <div class="bg-white min-h-[100px] p-2 text-gray-900 text-sm font-bold">14</div>
+                        <div class="bg-white min-h-[100px] p-2 text-gray-900 text-sm font-bold">15</div>
 
                         <!-- Fila 4 (16-22) -->
-                        <div class="bg-white min-h-[120px] p-2 text-gray-900 text-sm font-bold">16</div>
-                        <div class="bg-white min-h-[120px] p-2 text-gray-900 text-sm font-bold">17</div>
-                        <div class="bg-white min-h-[120px] p-2 text-gray-900 text-sm font-bold">18</div>
-                        <div class="bg-white min-h-[120px] p-2 text-gray-900 text-sm font-bold">19</div>
-                        <div class="bg-white min-h-[120px] p-2 text-gray-900 text-sm font-bold">20</div>
-                        <div class="bg-white min-h-[120px] p-2 text-gray-900 text-sm font-bold">21</div>
-                        <div class="bg-white min-h-[120px] p-2 text-gray-900 text-sm font-bold">22</div>
+                        <div class="bg-white min-h-[100px] p-2 text-gray-900 text-sm font-bold">16</div>
+                        <div class="bg-white min-h-[100px] p-2 text-gray-900 text-sm font-bold">17</div>
+                        <div class="bg-white min-h-[100px] p-2 text-gray-900 text-sm font-bold">18</div>
+                        <div class="bg-white min-h-[100px] p-2 text-gray-900 text-sm font-bold">19</div>
+                        <div class="bg-white min-h-[100px] p-2 text-gray-900 text-sm font-bold">20</div>
+                        <div class="bg-white min-h-[100px] p-2 text-gray-900 text-sm font-bold">21</div>
+                        <div class="bg-white min-h-[100px] p-2 text-gray-900 text-sm font-bold">22</div>
 
                         <!-- Fila 5 (23-29) -->
-                        <div class="bg-white min-h-[120px] p-2 text-gray-900 text-sm font-bold">23</div>
-                        <div class="bg-white min-h-[120px] p-2 text-gray-900 text-sm font-bold">24</div>
-                        <div class="bg-white min-h-[120px] p-2 text-gray-900 text-sm font-bold">25</div>
-                        <div class="bg-white min-h-[120px] p-2 text-gray-900 text-sm font-bold">26</div>
-                        <div class="bg-white min-h-[120px] p-2 text-gray-900 text-sm font-bold">27</div>
-                        <div class="bg-white min-h-[120px] p-2 text-gray-900 text-sm font-bold">28</div>
-                        <div class="bg-white min-h-[120px] p-2 text-gray-900 text-sm font-bold">29</div>
+                        <div class="bg-white min-h-[100px] p-2 text-gray-900 text-sm font-bold">23</div>
+                        <div class="bg-white min-h-[100px] p-2 text-gray-900 text-sm font-bold">24</div>
+                        <div class="bg-white min-h-[100px] p-2 text-gray-900 text-sm font-bold">25</div>
+                        <div class="bg-white min-h-[100px] p-2 text-gray-900 text-sm font-bold">26</div>
+                        <div class="bg-white min-h-[100px] p-2 text-gray-900 text-sm font-bold">27</div>
+                        <div class="bg-white min-h-[100px] p-2 text-gray-900 text-sm font-bold">28</div>
+                        <div class="bg-white min-h-[100px] p-2 text-gray-900 text-sm font-bold">29</div>
                     </div>
                 </div>
             </div>
