@@ -21,7 +21,7 @@
                 <div class="w-full max-w-md mx-auto">
                     <div class="text-center mb-8">
                         <a href="/" class="inline-block">
-                            <img src="{{ asset('images/logo.jpeg') }}" alt="JurisTech" class="h-[72px] w-auto object-contain">
+                            <img src="{{ asset('images/logo.jpeg') }}" alt="JurisTech" class="h-[100px] w-auto object-contain">
                         </a>
                         <p class="mt-2 text-[15px] text-gray-600">Gestión integral de clientes y seguimiento de procesos</p>
                     </div>
