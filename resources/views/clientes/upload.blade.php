@@ -7,20 +7,30 @@
         </div>
 
         <div class="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
-            <div class="p-8">
-                <!-- Drag & Drop Area -->
-                <div class="border-2 border-dashed border-gray-300 rounded-xl p-12 flex flex-col items-center justify-center text-center hover:border-blue-500 hover:bg-blue-50/50 transition-all cursor-pointer group">
+            <!-- Formulario de Importación -->
+            <form action="{{ route('clientes.import') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="p-8">
+                <!-- Drag & Drop Area con Alpine.js -->
+                <div x-data="{ fileName: '', dragOver: false }" 
+                     class="border-2 border-dashed rounded-xl p-12 flex flex-col items-center justify-center text-center transition-all cursor-pointer group"
+                     :class="dragOver ? 'border-blue-500 bg-blue-50' : 'border-gray-300 hover:border-blue-500 hover:bg-blue-50/50'"
+                     @dragover.prevent="dragOver = true"
+                     @dragleave.prevent="dragOver = false"
+                     @drop.prevent="dragOver = false; if($event.dataTransfer.files.length > 0) { $refs.fileInput.files = $event.dataTransfer.files; fileName = $event.dataTransfer.files[0].name; }"
+                     @click="$refs.fileInput.click()">
+                    
                     <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
                     </div>
-                    <h3 class="text-lg font-bold text-[#0f172a] mb-1">Haz clic para subir o arrastra tu archivo aquí</h3>
-                    <p class="text-sm text-gray-500 mb-6">Formatos soportados: CSV, XLSX (Máximo 10MB)</p>
+                    <h3 class="text-lg font-bold text-[#0f172a] mb-1" x-text="fileName ? 'Archivo seleccionado: ' + fileName : 'Haz clic para subir o arrastra tu archivo aquí'"></h3>
+                    <p class="text-sm text-gray-500 mb-6" x-show="!fileName">Formatos soportados: CSV (Máximo 10MB)</p>
                     
-                    <button class="bg-white border border-gray-300 text-gray-700 font-semibold py-2 px-6 rounded-lg text-sm shadow-sm hover:bg-gray-50 transition-colors">
+                    <button type="button" class="bg-white border border-gray-300 text-gray-700 font-semibold py-2 px-6 rounded-lg text-sm shadow-sm hover:bg-gray-50 transition-colors" x-show="!fileName">
                         Seleccionar Archivo
                     </button>
-                    <!-- Hidden file input for actual functionality -->
-                    <input type="file" class="hidden" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel">
+                    <!-- Hidden file input -->
+                    <input type="file" name="file" x-ref="fileInput" class="hidden" accept=".csv, .txt" @change="if($event.target.files.length > 0) { fileName = $event.target.files[0].name; }" required>
                 </div>
 
                 <!-- Info Cards -->
@@ -55,10 +65,10 @@
                             <div>
                                 <h4 class="text-sm font-bold text-[#0f172a] mb-1">¿No tienes la estructura?</h4>
                                 <p class="text-[13px] text-gray-600 mb-3">Descarga nuestra plantilla de ejemplo para asegurar una importación exitosa.</p>
-                                <button class="text-[13px] font-bold text-[#1e58c8] hover:text-blue-800 flex items-center gap-1.5 transition-colors">
+                                <a href="{{ route('clientes.template') }}" class="text-[13px] font-bold text-[#1e58c8] hover:text-blue-800 flex items-center gap-1.5 transition-colors">
                                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
                                     Descargar Plantilla CSV
-                                </button>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -70,10 +80,11 @@
                 <a href="{{ route('clientes.index') }}" class="px-5 py-2.5 text-sm font-semibold text-gray-600 hover:bg-gray-200 rounded-lg transition-colors">
                     Cancelar
                 </a>
-                <button class="bg-[#1e58c8] hover:bg-blue-700 text-white font-semibold py-2.5 px-6 rounded-lg text-sm shadow-sm transition-colors opacity-50 cursor-not-allowed">
+                <button type="submit" class="bg-[#1e58c8] hover:bg-blue-700 text-white font-semibold py-2.5 px-6 rounded-lg text-sm shadow-sm transition-colors">
                     Importar Clientes
                 </button>
             </div>
+            </form>
         </div>
     </div>
 </x-app-layout>

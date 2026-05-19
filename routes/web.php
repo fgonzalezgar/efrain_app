@@ -18,6 +18,8 @@ Route::get('/clientes', [ClientController::class, 'index'])->middleware(['auth',
 Route::get('/clientes/cargar', [ClientController::class, 'upload'])->middleware(['auth', 'verified'])->name('clientes.upload');
 Route::get('/clientes/crear', [ClientController::class, 'create'])->middleware(['auth', 'verified'])->name('clientes.create');
 Route::post('/clientes', [ClientController::class, 'store'])->middleware(['auth', 'verified'])->name('clientes.store');
+Route::get('/clientes/plantilla', [ClientController::class, 'downloadTemplate'])->middleware(['auth', 'verified'])->name('clientes.template');
+Route::post('/clientes/importar', [ClientController::class, 'import'])->middleware(['auth', 'verified'])->name('clientes.import');
 Route::get('/clientes/{id}', [ClientController::class, 'show'])->middleware(['auth', 'verified'])->name('clientes.show');
 
 Route::get('/api/departamentos/{department}/municipios', function (App\Models\Department $department) {
