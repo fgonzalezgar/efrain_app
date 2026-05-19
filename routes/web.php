@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ResponsibleController;
+use App\Http\Controllers\ProcesoController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -27,6 +28,10 @@ Route::get('/api/departamentos/{department}/municipios', function (App\Models\De
 Route::get('/responsables', [ResponsibleController::class, 'index'])->middleware(['auth', 'verified'])->name('responsibles.index');
 Route::get('/responsables/crear', [ResponsibleController::class, 'create'])->middleware(['auth', 'verified'])->name('responsibles.create');
 Route::post('/responsables', [ResponsibleController::class, 'store'])->middleware(['auth', 'verified'])->name('responsibles.store');
+
+// Rutas de Procesos
+Route::get('/procesos/registro', [ProcesoController::class, 'create'])->middleware(['auth', 'verified'])->name('procesos.create');
+Route::post('/procesos', [ProcesoController::class, 'store'])->middleware(['auth', 'verified'])->name('procesos.store');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
