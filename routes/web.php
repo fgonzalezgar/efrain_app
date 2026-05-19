@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ResponsibleController;
 use App\Http\Controllers\ProcesoController;
+use App\Http\Controllers\CalendarController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -21,6 +22,9 @@ Route::post('/clientes', [ClientController::class, 'store'])->middleware(['auth'
 Route::get('/clientes/plantilla', [ClientController::class, 'downloadTemplate'])->middleware(['auth', 'verified'])->name('clientes.template');
 Route::post('/clientes/importar', [ClientController::class, 'import'])->middleware(['auth', 'verified'])->name('clientes.import');
 Route::get('/clientes/{id}', [ClientController::class, 'show'])->middleware(['auth', 'verified'])->name('clientes.show');
+
+// Calendario
+Route::get('/calendario', [CalendarController::class, 'index'])->middleware(['auth', 'verified'])->name('calendario.index');
 
 Route::get('/api/departamentos/{department}/municipios', function (App\Models\Department $department) {
     return response()->json($department->municipalities()->orderBy('name')->get(['id', 'name']));
