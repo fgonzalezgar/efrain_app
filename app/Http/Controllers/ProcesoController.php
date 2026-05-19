@@ -13,15 +13,17 @@ class ProcesoController extends Controller
     public function create()
     {
         $responsibles = Responsible::where('status', 'active')->get();
+        $clients = Client::orderBy('name')->get();
         // Generar un código interno aleatorio
         $codigoInterno = 'JT-' . date('Y') . '-' . strtoupper(Str::random(4));
         
-        return view('procesos.create', compact('responsibles', 'codigoInterno'));
+        return view('procesos.create', compact('responsibles', 'clients', 'codigoInterno'));
     }
 
     public function store(Request $request)
     {
         $validated = $request->validate([
+            'client_id' => 'required|exists:clients,id',
             'entidad' => 'required|string|max:255',
             'numero_obligacion' => 'nullable|string|max:255',
             'tipo_tramite' => 'required|string|max:255',

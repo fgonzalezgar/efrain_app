@@ -31,12 +31,13 @@
                     </div>
                     <div class="p-6">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <!-- Si queremos Client -->
                             <div class="col-span-1 md:col-span-2">
-                                <label for="client_id" class="block text-sm font-semibold text-gray-700 mb-1.5">Cliente (Opcional)</label>
-                                <select name="client_id" id="client_id" class="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-sm py-2.5 px-3 transition-colors">
-                                    <option value="">Buscar o seleccionar cliente...</option>
-                                    {{-- Aquí iría un loop de clientes si los enviamos desde el controlador, o será por ajax. Por ahora lo dejamos simple --}}
+                                <label for="client_id" class="block text-sm font-semibold text-gray-700 mb-1.5">Cliente <span class="text-red-500">*</span></label>
+                                <select name="client_id" id="client_id" class="w-full border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-sm py-2.5 px-3 transition-colors" required>
+                                    <option value="">Seleccione un cliente...</option>
+                                    @foreach($clients as $client)
+                                        <option value="{{ $client->id }}">{{ $client->name }} ({{ $client->document }})</option>
+                                    @endforeach
                                 </select>
                             </div>
 
