@@ -39,6 +39,10 @@
                             <li><span class="text-gray-800">Cédula</span> (Obligatorio)</li>
                             <li><span class="text-gray-800">Correo Electrónico</span></li>
                             <li><span class="text-gray-800">Teléfono</span></li>
+                            <li><span class="text-gray-800">Departamento</span> (Obligatorio)</li>
+                            <li><span class="text-gray-800">Municipio</span> (Obligatorio)</li>
+                            <li><span class="text-gray-800">Estado Inicial</span> (Obligatorio)</li>
+                            <li><span class="text-gray-800">Central de Riesgo</span> (Obligatorio)</li>
                         </ul>
                     </div>
 
