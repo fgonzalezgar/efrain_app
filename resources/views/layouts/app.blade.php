@@ -151,6 +151,12 @@
                                 <svg class="w-4 h-4 mx-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                                 <span class="text-[#0f172a]">Nuevo Responsable</span>
                             </div>
+                        @elseif(request()->routeIs('responsibles.upload'))
+                            <div class="hidden md:flex items-center text-sm font-semibold">
+                                <a href="{{ route('responsibles.index') }}" class="text-gray-600 hover:text-gray-900 transition-colors">Responsables</a>
+                                <svg class="w-4 h-4 mx-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                                <span class="text-[#0f172a]">Cargar Responsables</span>
+                            </div>
                         @elseif(request()->routeIs('procesos.create'))
                             <div class="hidden md:flex items-center text-sm font-semibold">
                                 <a href="{{ route('dashboard') }}" class="text-gray-600 hover:text-gray-900 transition-colors">Dashboard</a>

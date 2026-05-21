@@ -31,9 +31,12 @@ Route::get('/api/departamentos/{department}/municipios', function (App\Models\De
 })->middleware(['auth', 'verified'])->name('api.municipalities');
 
 // Rutas de Responsables
-Route::get('/responsables', [ResponsibleController::class, 'index'])->middleware(['auth', 'verified'])->name('responsibles.index');
-Route::get('/responsables/crear', [ResponsibleController::class, 'create'])->middleware(['auth', 'verified'])->name('responsibles.create');
-Route::post('/responsables', [ResponsibleController::class, 'store'])->middleware(['auth', 'verified'])->name('responsibles.store');
+Route::get('/responsibles', [ResponsibleController::class, 'index'])->middleware(['auth', 'verified'])->name('responsibles.index');
+Route::get('/responsibles/cargar', [ResponsibleController::class, 'upload'])->middleware(['auth', 'verified'])->name('responsibles.upload');
+Route::get('/responsibles/crear', [ResponsibleController::class, 'create'])->middleware(['auth', 'verified'])->name('responsibles.create');
+Route::post('/responsibles', [ResponsibleController::class, 'store'])->middleware(['auth', 'verified'])->name('responsibles.store');
+Route::get('/responsibles/plantilla', [ResponsibleController::class, 'downloadTemplate'])->middleware(['auth', 'verified'])->name('responsibles.template');
+Route::post('/responsibles/importar', [ResponsibleController::class, 'import'])->middleware(['auth', 'verified'])->name('responsibles.import');
 
 // Rutas de Procesos
 Route::get('/procesos/registro', [ProcesoController::class, 'create'])->middleware(['auth', 'verified'])->name('procesos.create');
