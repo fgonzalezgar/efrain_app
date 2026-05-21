@@ -62,6 +62,14 @@
                             @enderror
                         </div>
                     </div>
+
+                    <div class="mt-6">
+                        <label for="address" class="block text-sm font-bold text-gray-700 mb-1.5">Dirección de Residencia</label>
+                        <input type="text" id="address" name="address" value="{{ old('address') }}" class="w-full border @error('address') border-red-500 @else border-gray-300 @enderror rounded-lg shadow-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-sm py-2.5 px-3 transition-colors" placeholder="Ej. Calle 45 # 12-34, Apto 301">
+                        @error('address')
+                            <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                        @enderror
+                    </div>
                 </div>
 
                 <!-- Sección: Información de Contacto -->

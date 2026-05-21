@@ -29,6 +29,7 @@ class StoreClientRequest extends FormRequest
             'phone' => 'nullable|string|max:20',
             'department_id' => 'required|exists:departments,id',
             'municipality_id' => 'required|exists:municipalities,id',
+            'address' => 'nullable|string|max:255',
             'responsible_id' => 'nullable|exists:responsibles,id',
             'initial_status' => 'required|string|in:peticion,respuesta,tutela,sic',
             'bureau' => 'required|string|in:datacredito,cifin',

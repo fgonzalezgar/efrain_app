@@ -13,6 +13,7 @@ class Client extends Model
         'phone',
         'department_id',
         'municipality_id',
+        'address',
         'responsible_id',
         'initial_status',
         'bureau',
