@@ -46,13 +46,15 @@
                         </p>
                         <ul class="text-[12px] font-medium text-gray-500 space-y-1.5 list-disc list-inside">
                             <li><span class="text-gray-800">Nombre completo</span> (Obligatorio)</li>
-                            <li><span class="text-gray-800">Cédula</span> (Obligatorio)</li>
-                            <li><span class="text-gray-800">Correo Electrónico</span></li>
-                            <li><span class="text-gray-800">Teléfono</span></li>
+                            <li><span class="text-gray-800">Cédula</span> (Obligatorio - Único)</li>
+                            <li><span class="text-gray-800">Correo Electrónico</span> (Opcional)</li>
+                            <li><span class="text-gray-800">Teléfono</span> (Opcional)</li>
                             <li><span class="text-gray-800">Departamento</span> (Obligatorio)</li>
                             <li><span class="text-gray-800">Municipio</span> (Obligatorio)</li>
-                            <li><span class="text-gray-800">Estado Inicial</span> (Obligatorio)</li>
-                            <li><span class="text-gray-800">Central de Riesgo</span> (Obligatorio)</li>
+                            <li><span class="text-gray-800">Dirección</span> (Opcional)</li>
+                            <li><span class="text-gray-800">Estado Inicial</span> (Obligatorio - *peticion, respuesta, tutela, sic*)</li>
+                            <li><span class="text-gray-800">Central de Riesgo</span> (Obligatorio - *datacredito, cifin*)</li>
+                            <li><span class="text-gray-800">Notas</span> (Opcional)</li>
                         </ul>
                     </div>
 

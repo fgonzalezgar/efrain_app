@@ -60,8 +60,10 @@ class ClientController extends Controller
             'Teléfono', 
             'Departamento', 
             'Municipio', 
+            'Dirección',
             'Estado Inicial', 
-            'Central de Riesgo'
+            'Central de Riesgo',
+            'Notas'
         ];
 
         $callback = function() use($columns) {
@@ -106,7 +108,7 @@ class ClientController extends Controller
 
         try {
             while (($row = fgetcsv($handle, 1000, $separator)) !== FALSE) {
-                if(count($row) < 8) {
+                if(count($row) < 10) {
                     $errorCount++;
                     continue;
                 }
@@ -129,6 +131,31 @@ class ClientController extends Controller
                     continue;
                 }
 
+                // Normalización de Estado Inicial
+                $rawStatus = strtolower(trim($row[7]));
+                $statusMap = [
+                    'petición' => 'peticion',
+                    'peticion' => 'peticion',
+                    'respuesta' => 'respuesta',
+                    'esperando respuesta' => 'respuesta',
+                    'tutela' => 'tutela',
+                    'acción de tutela' => 'tutela',
+                    'sic' => 'sic',
+                    'queja sic' => 'sic',
+                    'queja ante la sic' => 'sic',
+                ];
+                $initialStatus = $statusMap[$rawStatus] ?? 'peticion';
+
+                // Normalización de Central de Riesgo
+                $rawBureau = strtolower(trim($row[8]));
+                $bureauMap = [
+                    'datacrédito' => 'datacredito',
+                    'datacredito' => 'datacredito',
+                    'cifin' => 'cifin',
+                    'transunion' => 'cifin',
+                ];
+                $bureau = $bureauMap[$rawBureau] ?? 'datacredito';
+
                 Client::updateOrCreate(
                     ['document' => trim($row[1])],
                     [
@@ -137,8 +164,10 @@ class ClientController extends Controller
                         'phone' => trim($row[3]) ?: null,
                         'department_id' => $dept->id,
                         'municipality_id' => $mun->id,
-                        'initial_status' => trim($row[6]),
-                        'bureau' => trim($row[7]),
+                        'address' => trim($row[6]) ?: null,
+                        'initial_status' => $initialStatus,
+                        'bureau' => $bureau,
+                        'notes' => trim($row[9]) ?: null,
                     ]
                 );
 
